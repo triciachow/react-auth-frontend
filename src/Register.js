@@ -5,11 +5,11 @@ export default function Register() {
     <>
       <h2>Register</h2>
       <Form>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email Address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="text" placeholder="********" />
         </Form.Group>
