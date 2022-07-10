@@ -58,11 +58,11 @@ export default function Register() {
         </Button>
         {register ? (
           <p className="alert-success mt-2  p-2 border border-success rounded">
-            You are registered successfully
+            You are registered successfully.
           </p>
         ) : (
           <p className="alert-danger mt-2 p-2 border border-danger rounded">
-            Failed to register
+            You are not registered.
           </p>
         )}
       </Form>
