@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import FreeComponent from "./FreeComponent";
 import AuthComponent from "./AuthComponent";
 import Account from "./Account";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 function App() {
   return (
@@ -18,9 +19,16 @@ function App() {
         </Col>
       </Row>
       <Routes>
-        <Route path="/" component={Account} />
-        <Route path="/free" component={FreeComponent} />
-        <Route path="/auth" component={AuthComponent} />
+        <Route path="/" element={<Account />} />
+        <Route path="/free" element={<FreeComponent />} />
+        <Route
+          path="/auth"
+          element={
+            <ProtectedRoutes>
+              <AuthComponent />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
     </Container>
   );
