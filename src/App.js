@@ -1,19 +1,27 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Register from "./Register";
-import Login from "./Login";
-import { Switch, Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import FreeComponent from "./FreeComponent";
 import AuthComponent from "./AuthComponent";
+import Account from "./Account";
 
 function App() {
   return (
     <Container>
-      <Row></Row>
-      <Switch>
-        <Route exact path="/" component={Account} />
-        <Route exact path="/free" component={FreeComponent} />
-        <Route exact path="/auth" component={AuthComponent} />
-      </Switch>
+      <Row>
+        <Col>
+          <h1>React Authentication Tutorial</h1>
+          <section id="navigation">
+            <a href="/">Home</a>
+            <a href="/free">Free component</a>
+            <a href="/auth">Auth component</a>
+          </section>
+        </Col>
+      </Row>
+      <Routes>
+        <Route path="/" component={Account} />
+        <Route path="/free" component={FreeComponent} />
+        <Route path="/auth" component={AuthComponent} />
+      </Routes>
     </Container>
   );
 }
