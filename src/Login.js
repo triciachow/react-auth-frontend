@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -22,6 +25,13 @@ export default function Register() {
     axios(configuration)
       .then(result => {
         setLogin(true);
+        // Set the cookie
+        cookies.set("TOKEN", result.data.token, {
+          // Makes the cookie available in all the pages
+          path: "/",
+        });
+        // Redirect users to the auth page
+        window.location.href = "/auth";
       })
       .catch(error => {
         error = new Error();
