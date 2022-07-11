@@ -42,7 +42,7 @@ export default function Register() {
     <>
       <h2>Login</h2>
       <Form onSubmit={e => handleSubmit(e)}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="loginEmail">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type="email"
@@ -52,7 +52,7 @@ export default function Register() {
             onChange={e => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="loginPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"

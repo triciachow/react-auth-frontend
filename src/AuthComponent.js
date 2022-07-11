@@ -26,7 +26,7 @@ export default function AuthComponent() {
         setMessage(result.data.message);
       })
       .catch(error => {
-        error: new Error();
+        error = new Error();
       });
   }, []);
 
