@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { Button } from "react-bootstrap";
 
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
@@ -29,12 +30,22 @@ export default function AuthComponent() {
       });
   }, []);
 
+  const logout = () => {
+    // Destroy existing cookie
+    cookies.remove("TOKEN", { path: "/" });
+    // Redirect user to landing page
+    window.location.href = "/";
+  };
+
   return (
     <>
       <div>AuthComponent</div>
       <p className="alert-success p-2 border border-success rounded">
         {message}
       </p>
+      <Button variant="danger" type="submit" onClick={() => logout()}>
+        Log out
+      </Button>
     </>
   );
 }
