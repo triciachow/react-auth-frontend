@@ -1,3 +1,1 @@
-# Live Demo
-
-https://react-auth-complete.netlify.app/
+This is a authentication tutorial.
